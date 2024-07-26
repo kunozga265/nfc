@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+   {% load plotly_dash%}
+   {% load static%}
+
+   {% block extra_header%}{% endblock%}
+   {% block app_header_css%}
+   <link rel="shortcut icon" href="{% static 'demo/favicon.png' %}" type="image/x-icon"></link>
+
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+        <link href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="{%static "style.css"%}"></link>
+   {% endblock%}
+   {% plotly_header%}
+   <title>NFC - {% block title%}{% endblock%}</title>
+ </head>
+ <body>
+   <header>
+     </header>
+   <main>
+     {% block main_top%}{% endblock%}
+     <div class="container">
+       {% block content%}{% endblock%}
+     </div>
+   </main>
+   {% block footer%}
+   {% endblock%}
+ </body>
+ {% block post_body%}{% endblock%}
+ {% plotly_footer%}
+</html>

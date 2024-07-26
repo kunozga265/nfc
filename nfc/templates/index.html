@@ -1,0 +1,25 @@
+{%extends "base.html"%}
+{%load plotly_dash%}
+
+{%block title%}Dashboard{%endblock%}
+
+{%block content%}
+<div class="card border-dark">
+  <div class="card-body">
+    <div class="{%plotly_class name="MainGraph"%}">
+      {%plotly_app name="MainGraph" ratio=.05 %}
+    </div>
+<!--    <div class="{%plotly_class name="SimpleExample"%}">-->
+<!--      {%plotly_app name="SimpleExample"%}-->
+<!--    </div>-->
+  </div>
+</div>
+<div class="card border-dark">
+  <div class="card-body">
+    <div class="{%plotly_class name="HouseholdGraph"%}">
+      {%plotly_app name="HouseholdGraph" ratio=.05 %}
+    </div>
+  </div>
+</div>
+<p></p>
+{%endblock%}

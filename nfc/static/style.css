@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800&amp;display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light+Two&amp;display=swap');
+
+/* Varialbes */
+:root {
+    --font-default: 'Outfit', sans-serif;
+    --font-secondary: 'Shadows Into Light Two', cursive;
+    --fontawesome: "Font Awesome 5 Pro";
+    --black: #000000;
+    --dark: #1f4e3d;
+    --dark-secondary: #1F1E17;
+    --white: #ffffff;
+    --color-secondary: #49a760;
+    --color-primary: #f7c35f;
+    --color-heading: #04000b;
+    --color-paragraph: #666666;
+    --box-shadow-primary: -1px 3px 10px 0 rgba(0, 0, 0, 0.6);
+    --box-shadow-secondary: 0 10px 30px 0 rgba(44, 130, 237, 0.4);
+    --box-shadow-regular: 0px 2px 12px 0px #e7e7e7;
+    --bg-gray: #e9f1ee;
+    --bg-gradient: linear-gradient(97deg, #49a760 50%, rgba(252,197,27,1) 100%);
+}
+html, * {
+    font-family: var(--font-default);
+}
+
+body {
+    font-family: var(--font-default);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.8;
+    overflow-x: hidden;
+    background-color: var(--white);
+    color: var(--color-paragraph);
+}
+
+.django-plotly-dash > div{
+    min-height: 350px;
+}
