@@ -4,36 +4,226 @@
 {%block title%}Dashboard{%endblock%}
 
 {%block content%}
-<div class="card border-dark">
-  <div class="card-body">
-    <div class="{%plotly_class name="MainGraph"%}">
-      {%plotly_app name="MainGraph" ratio=.05 %}
+
+<!--<div class="max-w-7xl mx-auto sm:px-6 lg:px-8 pb-8">
+
+    <nav class="flex breadcrumbs" aria-label="Breadcrumb">
+        <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
+            <li class="inline-flex items-center">
+                <a href="https://card.droluanar.com/dashboard"
+                   class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white">
+                    <svg class="w-3 h-3 me-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                         fill="currentColor" viewBox="0 0 20 20">
+                        <path d="m19.707 9.293-2-2-7-7a1 1 0 0 0-1.414 0l-7 7-2 2a1 1 0 0 0 1.414 1.414L2 10.414V18a2 2 0 0 0 2 2h3a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h3a2 2 0 0 0 2-2v-7.586l.293.293a1 1 0 0 0 1.414-1.414Z"/>
+                    </svg>
+                    Dashboard
+                </a>
+            </li>
+        </ol>
+    </nav>
+</div>-->
+
+<div class="">
+    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+
+        <div class="p-6 mb-4 bg-white overflow-hidden shadow-sm sm:rounded-lg">
+            <div class="pb-6 text-gray-900">
+                Graph 1
+            </div>
+
+            <div class="card border-dark">
+                <div class="card-body">
+                    <div class="{%plotly_class name="CompletedBlocksGraph"%}">
+                    {%plotly_app name="CompletedBlocksGraph" ratio=.05 %}
+                </div>
+            </div>
+        </div>
     </div>
-<!--    <div class="{%plotly_class name="SimpleExample"%}">-->
-<!--      {%plotly_app name="SimpleExample"%}-->
-<!--    </div>-->
-  </div>
-</div>
-<div class="card border-dark">
-  <div class="card-body">
-    <div class="{%plotly_class name="HouseholdGraph"%}">
-      {%plotly_app name="HouseholdGraph" ratio=.05 %}
+
+        <div class="p-6 mb-4 bg-white overflow-hidden shadow-sm sm:rounded-lg">
+            <div class="pb-6 text-gray-900">
+                Graph 2
+            </div>
+
+           <div class="card border-dark">
+               <div class="card-body">
+                   <div class="{%plotly_class name="DataTableGraph"%}">
+                   {%plotly_app name="DataTableGraph" ratio=.05 %}
+               </div>
+           </div>
+        </div>
+
+        </div>
+
+ <div class="p-6 mb-4 bg-white overflow-hidden shadow-sm sm:rounded-lg">
+            <div class="pb-6 text-gray-900">
+                Graph 3
+            </div>
+            <div class="card border-dark">
+                <div class="card-body">
+                    <div class="{%plotly_class name="DistrictGraph"%}">
+                    {%plotly_app name="DistrictGraph" ratio=.05 %}
+                </div>
+            </div>
+            </div>
+            <div class="card border-dark">
+                <div class="card-body">
+                    <div class="{%plotly_class name="MeanLandDifferenceGraph"%}">
+                    {%plotly_app name="MeanLandDifferenceGraph" ratio=.05 %}
+                </div>
+            </div>
+            </div>
+
+
+        </div>
+
+        <div class="p-6 mb-4 bg-white overflow-hidden shadow-sm sm:rounded-lg">
+            <div class="pb-6 text-gray-900">
+                Graph 4
+            </div>
+
+            <div class="card border-dark">
+                <div class="card-body">
+                    <div class="{%plotly_class name="LandTenureGraph"%}">
+                    {%plotly_app name="LandTenureGraph" ratio=.05 %}
+                </div>
+            </div>
+            </div>
+
+
+        </div>
+
+        <div class="p-6 mb-4 bg-white overflow-hidden shadow-sm sm:rounded-lg">
+            <div class="pb-6 text-gray-900">
+                Graph 5
+            </div>
+
+            <div class="card border-dark">
+                <div class="card-body">
+                    <div class="{%plotly_class name="FarmersOwnershipGraph"%}">
+                    {%plotly_app name="FarmersOwnershipGraph" ratio=.05 %}
+                </div>
+            </div>
+            </div>
+
+
+        </div>
+
+        <div class="p-6 mb-4 bg-white overflow-hidden shadow-sm sm:rounded-lg">
+            <div class="pb-6 text-gray-900">
+                Graph 6
+            </div>
+
+            <div class="card border-dark">
+                <div class="card-body">
+                    <div class="{%plotly_class name="ParticipationIrrigationGraph"%}">
+                    {%plotly_app name="ParticipationIrrigationGraph" ratio=.05 %}
+                </div>
+            </div>
+            </div>
+
+
+        </div>
+
+        <div class="p-6 mb-4 bg-white overflow-hidden shadow-sm sm:rounded-lg">
+            <div class="pb-6 text-gray-900">
+                Graph 7
+            </div>
+
+            <div class="card border-dark">
+                <div class="card-body">
+                    <div class="{%plotly_class name="AgriculturalEnterprisesGraph"%}">
+                    {%plotly_app name="AgriculturalEnterprisesGraph" ratio=.05 %}
+                </div>
+            </div>
+            </div>
+
+        </div>
+
+        <div class="p-6 mb-4 bg-white overflow-hidden shadow-sm sm:rounded-lg">
+            <div class="pb-6 text-gray-900">
+                Graph 8
+            </div>
+
+            <div class="card border-dark">
+                <div class="card-body">
+                    <div class="{%plotly_class name="CultivatingLegumesGraph"%}">
+                    {%plotly_app name="CultivatingLegumesGraph" ratio=.05 %}
+                </div>
+            </div>
+            </div>
+
+        </div>
+
+        <div class="p-6 mb-4 bg-white overflow-hidden shadow-sm sm:rounded-lg">
+            <div class="pb-6 text-gray-900">
+                Graph 9
+            </div>
+
+            <div class="card border-dark">
+                <div class="card-body">
+                    <div class="{%plotly_class name="ManureUseGraph"%}">
+                    {%plotly_app name="ManureUseGraph" ratio=.05 %}
+                </div>
+            </div>
+            </div>
+
+        </div>
+
+      <!--  <div class="p-6 mb-4 bg-white overflow-hidden shadow-sm sm:rounded-lg">
+            <div class="pb-6 text-gray-900">
+                Graph
+            </div>
+
+            <div class="card border-dark">
+                <div class="card-body">
+                    <div class="{%plotly_class name="MainGraph"%}">
+                    {%plotly_app name="MainGraph" ratio=.05 %}
+                </div>
+            </div>
+            </div>
+
+        </div>-->
+
+        <div class="p-6 mb-4 bg-white overflow-hidden shadow-sm sm:rounded-lg">
+            <div class="pb-6 text-gray-900">
+                Graph 10
+            </div>
+
+            <div class="card border-dark">
+                <div class="card-body">
+                    <div class="{%plotly_class name="HouseholdGraph"%}">
+                    {%plotly_app name="HouseholdGraph" ratio=.05 %}
+                </div>
+            </div>
+            </div>
+        </div>
+
+
+
+       <!-- <div class="p-6 mb-4 bg-white overflow-hidden shadow-sm sm:rounded-lg">
+            <div class="pb-6 text-gray-900">
+                Graph
+            </div>
+
+            <div class="card border-dark">
+                <div class="card-body">
+                    <div class="{%plotly_class name="DistrictDifferenceGraph"%}">
+                    {%plotly_app name="DistrictDifferenceGraph" ratio=.05 %}
+                </div>
+            </div>
+            </div>
+
+
+        </div>-->
+
+<!--        <div class="p-6 mb-4 bg-white overflow-hidden shadow-sm sm:rounded-lg">
+            <div class="pb-6 text-gray-900">
+                Graph
+            </div>
+        </div>-->
+
     </div>
-  </div>
 </div>
-<div class="card border-dark">
-  <div class="card-body">
-    <div class="{%plotly_class name="DistrictGraph"%}">
-      {%plotly_app name="DistrictGraph" ratio=.05 %}
-    </div>
-  </div>
-</div>
-<div class="card border-dark">
-  <div class="card-body">
-    <div class="{%plotly_class name="DistrictDifferenceGraph"%}">
-      {%plotly_app name="DistrictDifferenceGraph" ratio=.05 %}
-    </div>
-  </div>
-</div>
-<p></p>
+
 {%endblock%}

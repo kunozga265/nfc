@@ -1,32 +1,135 @@
 <!DOCTYPE HTML>
 <html>
- <head>
-   {% load plotly_dash%}
-   {% load static%}
+<head>
+    {% load plotly_dash%}
+    {% load static%}
 
-   {% block extra_header%}{% endblock%}
-   {% block app_header_css%}
-   <link rel="shortcut icon" href="{% static 'demo/favicon.png' %}" type="image/x-icon"></link>
+    {% block extra_header%}{% endblock%}
+    {% block app_header_css%}
+    <link rel="shortcut icon" href="{% static 'demo/favicon.png' %}" type="image/x-icon"></link>
 
-      <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
-        <link href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" rel="stylesheet" />
-  <link rel="stylesheet" type="text/css" href="{%static "style.css"%}"></link>
-   {% endblock%}
-   {% plotly_header%}
-   <title>NFC - {% block title%}{% endblock%}</title>
- </head>
- <body>
-   <header>
-     </header>
-   <main>
-     {% block main_top%}{% endblock%}
-     <div class="container">
-       {% block content%}{% endblock%}
-     </div>
-   </main>
-   {% block footer%}
-   {% endblock%}
- </body>
- {% block post_body%}{% endblock%}
- {% plotly_footer%}
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="{%static " style.css
+    "%}"></link>
+    {% endblock%}
+    {% plotly_header%}
+    <title>NFC - {% block title%}{% endblock%}</title>
+    <style>
+        main {
+            /*padding: 40px;*/
+        }
+
+        h1 {
+            /*font-size: 50px;*/
+        }
+
+        body {
+            /*background-color: #e7e7e7;*/
+        }
+
+        .django-plotly-dash > div {
+            min-height: 500px;
+        }
+    </style>
+</head>
+<body>
+<div class="min-h-screen bg-gray-100">
+
+    <nav class="bg-gray system-nav">
+
+        <div class="navbar">
+            <!-- Primary Navigation Menu -->
+            <nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
+                <!-- Primary Navigation Menu -->
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="flex justify-between h-16">
+                        <div class="flex">
+                            <!-- drawer init and show -->
+                            <div class="text-center flex align-items-center mr-5">
+                                <button class="toggle_nav" type="button">
+
+
+                                    <svg class="flex-shrink-0 w-5 h-5 text-gray-600 transition duration-75  group-hover:text-gray-900 dark:group-hover:text-white"
+                                         xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100"
+                                         viewBox="0 0 50 50">
+                                        <path d="M 5 9 L 5 11 L 45 11 L 45 9 L 5 9 z M 5 24 L 5 26 L 45 26 L 45 24 L 5 24 z M 5 39 L 5 41 L 45 41 L 45 39 L 5 39 z"></path>
+                                    </svg>
+                                </button>
+                            </div>
+
+                            <!-- Logo -->
+                            <div class="shrink-0 flex items-center">
+                                <a href="https://card.droluanar.com/dashboard">
+                                    <img src="https://card.droluanar.com/assets/img/luanar-logo.png" class="w-8"
+                                         alt="LUANAR Logo" itemprop="image"/>
+                                </a>
+                            </div>
+
+
+                        </div>
+
+
+                        <!-- Hamburger -->
+                        <div class="-mr-2 flex items-center sm:hidden">
+                            <button @click="open = ! open"
+                                    class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
+                                <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                                    <path :class="{'hidden': open, 'inline-flex': ! open }" class="inline-flex"
+                                          stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M4 6h16M4 12h16M4 18h16"/>
+                                    <path :class="{'hidden': ! open, 'inline-flex': open }" class="hidden"
+                                          stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M6 18L18 6M6 6l12 12"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Responsive Navigation Menu -->
+                <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
+                    <div class="pt-2 pb-3 space-y-1">
+                        <a class="block w-full pl-3 pr-4 py-2 border-l-4 border-indigo-400 text-left text-base font-medium text-indigo-700 bg-indigo-50 focus:outline-none focus:text-indigo-800 focus:bg-indigo-100 focus:border-indigo-700 transition duration-150 ease-in-out"
+                           href="https://card.droluanar.com/dashboard">
+                            NFC Reports
+                        </a>
+                    </div>
+
+
+                </div>
+            </nav>
+            <!-- Page Heading -->
+            <header class="bg-white shadow">
+                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+                    <h2 class="text-xl text-gray-800 leading-tight">
+                        NFC Reports
+                    </h2>
+                </div>
+
+
+            </header>
+        </div>
+
+    </nav>
+
+    <div class="system-content py-8">
+        <!-- Page Content -->
+        <main>
+            {% block main_top%}{% endblock%}
+            <div class="">
+                {% block content%}{% endblock%}
+            </div>
+        </main>
+        {% block footer%}
+        {% endblock%}
+
+    </div>
+
+</div>
+
+
+</body>
+{% block post_body%}{% endblock%}
+{% plotly_footer%}
 </html>
