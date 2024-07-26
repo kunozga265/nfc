@@ -6,6 +6,7 @@ import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 from django_plotly_dash import DjangoDash
+# import matplotlib.pyplot as plt
 
 app = DjangoDash('SimpleExample')  # replaces dash.Dash
 
@@ -45,13 +46,13 @@ def callback_size(dropdown_color, dropdown_size):
 
 # Main Graph
 # NFC data
-# file_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "REGISTERED FARM HOUSEHOLDS .xlsx")
-file_path = "https://card.droluanar.com/uploads/nfc-data.xlsx"
+file_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "REGISTERED FARM HOUSEHOLDS.xlsx")
+# file_path = "https://card.droluanar.com/uploads/nfc-data.xlsx"
 print(file_path)
 df = pd.read_excel(file_path)
 
 # Data transformation
-df['Date'] = pd.to_datetime(df['Date'])
+# df['Date'] = pd.to_datetime(df['Date'])
 
 # Plots/Visuals
 
@@ -158,3 +159,60 @@ householdGraph.layout = html.Div([
     # html.Div(children='My First App with Data and a Graph'),
     dcc.Graph(figure=fig2, style={'width': '100%', 'height': '350px'})
 ])
+
+# Plot 3
+file_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "REGISTERED FARM HOUSEHOLDS.xlsx")
+# file_path = "https://card.droluanar.com/uploads/nfc-data.xlsx"
+print(file_path)
+df = pd.read_excel(file_path)
+
+# Extract relevant columns for comparison
+comparison_data = df[['District.1', 'Mean1 (Ha)', 'Mean2 (Ha)']]
+comparison_data.columns = ['District', 'Mean1 (Ha)', 'Mean2 (Ha)']
+
+# Calculate percentage differences
+comparison_data['Percentage Difference (%)'] = ((comparison_data['Mean1 (Ha)'] - comparison_data['Mean2 (Ha)']) / comparison_data['Mean2 (Ha)']) * 100
+
+# Plotting the comparison bar chart using Plotly
+fig3 = go.Figure(data=[
+    go.Bar(name='Mean1 (Ha)', x=comparison_data['District'], y=comparison_data['Mean1 (Ha)'], marker_color='orange'),
+    go.Bar(name='Mean2 (Ha)', x=comparison_data['District'], y=comparison_data['Mean2 (Ha)'], marker_color='red')
+])
+
+fig3.update_layout(
+    title='Comparison of Mean Land Holding Sizes Reported and Collected via GPS',
+    xaxis_title='District',
+    yaxis_title='Mean Land Holding Size (Ha)',
+    barmode='group'
+)
+
+# Show the figure
+
+districtGraph = DjangoDash('DistrictGraph')  # replaces dash.Dash
+
+districtGraph.layout = html.Div([
+    # html.Div(children='My First App with Data and a Graph'),
+    dcc.Graph(figure=fig3, style={'width': '100%', 'height': '350px'})
+])
+
+# Plotting the percentage differences using Plotly
+fig4 = px.bar(comparison_data, x='District', y='Percentage Difference (%)',
+              title='Percentage Differences in Mean Land Holding Sizes between Household Reported and GPS Collected Data',
+              labels={'Percentage Difference (%)': 'Percentage Difference (%)'},
+              color='Percentage Difference (%)', color_continuous_scale='Viridis')
+
+fig4.update_layout(
+    xaxis_title='District',
+    yaxis_title='Percentage Difference (%)',
+    coloraxis_colorbar=dict(title="Percentage Difference (%)")
+)
+
+# Show the figure
+districtDifferenceGraph = DjangoDash('DistrictDifferenceGraph')  # replaces dash.Dash
+
+districtDifferenceGraph.layout = html.Div([
+    # html.Div(children='My First App with Data and a Graph'),
+    dcc.Graph(figure=fig4, style={'width': '100%', 'height': '350px'})
+])
+
+

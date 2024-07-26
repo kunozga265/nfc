@@ -26,7 +26,10 @@ SECRET_KEY = 'django-insecure-7@s9_m0h1r-4w$jb6=wh=8c59pq2l7k3cw_1vak7$vr@ii&70d
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "nfc.cardluanar.com",
+    "127.0.0.1"
+]
 
 
 # Application definition

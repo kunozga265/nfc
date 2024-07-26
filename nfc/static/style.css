@@ -36,5 +36,5 @@ body {
 }
 
 .django-plotly-dash > div{
-    min-height: 350px;
+    min-height: 500px;
 }
